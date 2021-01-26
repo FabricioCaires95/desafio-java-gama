@@ -10,15 +10,13 @@ public class Aplicacao {
 	public static void main(String[] args) {
 		UsuarioService s = new UsuarioService();
 		Usuario u = new Usuario();
-		u.setCpf("1");
-		u.setNome("alguem");
-		u.setLogin("aa");
-		u.setSenha("xxxx");
+		u.setCpf("12345");
+		u.setNome("rafael");
+		u.setLogin("aaaab");
+		u.setSenha("1234");
 		
-		u.addConta(new Conta("123",897.08));
+		u.addConta(new Conta("1521",900000.08));
 		s.incluir(u);
-		
-		UsuarioRepository ur = new UsuarioRepository();
 		
 		ContaRepository cr = new ContaRepository();
 		

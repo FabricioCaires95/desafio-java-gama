@@ -21,7 +21,7 @@ public class Conta {
 	private Double saldo;
 	
 	@OneToOne
-	@JoinColumn(name = "cd_usuario",referencedColumnName = "id")
+	@JoinColumn(name = "cd_usuario",referencedColumnName = "user")
 	private Usuario proprietario;
 	
 	public Usuario getProprietario() {
