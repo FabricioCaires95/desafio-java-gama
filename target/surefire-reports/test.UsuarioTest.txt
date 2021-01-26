@@ -1,0 +1,47 @@
+-------------------------------------------------------------------------------
+Test set: test.UsuarioTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.479 s <<< FAILURE! - in test.UsuarioTest
+loginComprimentoTest  Time elapsed: 0.442 s  <<< ERROR!
+javax.persistence.PersistenceException: Unable to build entity manager factory
+	at test.UsuarioTest.loginComprimentoTest(UsuarioTest.java:17)
+Caused by: org.hibernate.exception.JDBCConnectionException: Error calling Driver#connect
+	at test.UsuarioTest.loginComprimentoTest(UsuarioTest.java:17)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at test.UsuarioTest.loginComprimentoTest(UsuarioTest.java:17)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at test.UsuarioTest.loginComprimentoTest(UsuarioTest.java:17)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at test.UsuarioTest.loginComprimentoTest(UsuarioTest.java:17)
+
+loginComprimentoIvalidoTest  Time elapsed: 0.027 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception type thrown ==> expected: <java.lang.IllegalArgumentException> but was: <javax.persistence.PersistenceException>
+	at test.UsuarioTest.loginComprimentoIvalidoTest(UsuarioTest.java:26)
+Caused by: javax.persistence.PersistenceException: Unable to build entity manager factory
+	at test.UsuarioTest.lambda$loginComprimentoIvalidoTest$0(UsuarioTest.java:30)
+	at test.UsuarioTest.loginComprimentoIvalidoTest(UsuarioTest.java:26)
+Caused by: org.hibernate.exception.JDBCConnectionException: Error calling Driver#connect
+	at test.UsuarioTest.lambda$loginComprimentoIvalidoTest$0(UsuarioTest.java:30)
+	at test.UsuarioTest.loginComprimentoIvalidoTest(UsuarioTest.java:26)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at test.UsuarioTest.lambda$loginComprimentoIvalidoTest$0(UsuarioTest.java:30)
+	at test.UsuarioTest.loginComprimentoIvalidoTest(UsuarioTest.java:26)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: 
+Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at test.UsuarioTest.lambda$loginComprimentoIvalidoTest$0(UsuarioTest.java:30)
+	at test.UsuarioTest.loginComprimentoIvalidoTest(UsuarioTest.java:26)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at test.UsuarioTest.lambda$loginComprimentoIvalidoTest$0(UsuarioTest.java:30)
+	at test.UsuarioTest.loginComprimentoIvalidoTest(UsuarioTest.java:26)
+
