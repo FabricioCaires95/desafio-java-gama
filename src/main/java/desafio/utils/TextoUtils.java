@@ -1,6 +1,5 @@
 package desafio.utils;
 
-import java.util.IllegalFormatException;
 import java.util.InputMismatchException;
 
 public class TextoUtils {
@@ -21,7 +20,7 @@ public class TextoUtils {
             char dig10, dig11;
             int sm = 0, i, r, num, peso = 0;
             for (i=0; i<9; i++) {
-            	num = (int)(cpf.charAt(i) - 48);
+            	num = cpf.charAt(i) - 48;
             	sm = sm + (num * peso);
                 peso = peso - 1;
             }
@@ -33,7 +32,7 @@ public class TextoUtils {
             sm = 0;
             peso = 11;
             for(i=0; i<10; i++) {
-            num = (int)(cpf.charAt(i) - 48);
+            num = cpf.charAt(i) - 48;
             sm = sm + (num * peso);
             peso = peso - 1;
             }

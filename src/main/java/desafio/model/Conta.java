@@ -19,9 +19,11 @@ public class Conta {
 	private String numero;
 	@Column(name = "saldo")
 	private Double saldo;
-	
+	@Column(name = "tipo_conta")
+	private String tipo_conta;
+
 	@OneToOne
-	@JoinColumn(name = "cd_usuario",referencedColumnName = "user")
+	@JoinColumn(name = "cd_usuario",referencedColumnName = "id")
 	private Usuario proprietario;
 	
 	public Usuario getProprietario() {
@@ -32,14 +34,21 @@ public class Conta {
 	}
 	
 	
+	public String getTipo_conta() {
+		return tipo_conta;
+	}
+	public void setTipo_conta(String tipo_conta) {
+		this.tipo_conta = tipo_conta;
+	}
 	public Conta() {
 		
 	}
 	
-	public Conta(String numero, Double saldo) {
+	public Conta(String numero, Double saldo, String tipo_conta) {
 		super();
 		this.numero = numero;
 		this.saldo = saldo;
+		this.tipo_conta = tipo_conta;
 	}
 	public String getNumero() {
 		return numero;

@@ -39,7 +39,7 @@ public class Usuario {
 	}
 	
 	public void addConta(Conta conta) {
-		//conta.setProprietario(this);
+		conta.setProprietario(this);
 		this.contas.add(conta);
 	}
 	
@@ -70,7 +70,5 @@ public class Usuario {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
-	
 	
 }

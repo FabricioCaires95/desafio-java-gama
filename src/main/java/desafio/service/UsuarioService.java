@@ -1,8 +1,6 @@
 package desafio.service;
 
-import desafio.model.Conta;
 import desafio.model.Usuario;
-import desafio.repository.ContaRepository;
 import desafio.repository.UsuarioRepository;
 import desafio.utils.TextoUtils;
 
@@ -12,7 +10,7 @@ public class UsuarioService {
 	public void incluir(Usuario usuario) {
 		boolean comprimentoValido = TextoUtils.validaComprimento(usuario.getLogin(), 20);
 		boolean cpfValido = TextoUtils.validaCpf(usuario.getCpf());
-		if(!comprimentoValido || cpfValido)
+		if(!comprimentoValido && cpfValido)
 			throw new IllegalArgumentException();
 		//Usuario udb = rep.buscarByLogin(usuario.getLogin());
 		
