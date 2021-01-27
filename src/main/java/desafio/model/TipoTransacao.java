@@ -8,4 +8,12 @@ public enum TipoTransacao {
 	TipoTransacao(String tipoTransacao){
 		this.tipoTransacao = tipoTransacao;
 	}
+	
+	
+	public String getTipoTransacao() {
+		return tipoTransacao;
+	}
+	public void setTipoTransacao(String tipoTransacao) {
+		this.tipoTransacao = tipoTransacao;
+	}
 }
