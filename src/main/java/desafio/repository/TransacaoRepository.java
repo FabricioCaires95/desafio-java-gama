@@ -1,8 +1,8 @@
 package desafio.repository;
 
-import desafio.model.Transacoes;
+import desafio.model.Transacao;
 import desafio.model.Usuario;
 
-public class TransacaoRepository extends RepositorioGenerico<Transacoes>{
+public class TransacaoRepository extends RepositorioGenerico<Transacao>{
 	
 }

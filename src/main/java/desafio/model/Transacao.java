@@ -15,24 +15,27 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tab_transacoes")
-public class Transacoes {
+public class Transacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column(name = "published_on")
+	
+	@Column(name = "data_transacao", nullable = false)
 	private LocalDate date;
+	
 	@OneToOne
 	@JoinColumn(name="conta_user", referencedColumnName = "id")
 	private Conta numero;
-	@Column(name= "valor")
+	
+	@Column(name= "valor_transacao", scale = 2)
 	private Double valor;
-	@Enumerated(EnumType.STRING)
-	@Column(name = "plano_conta")
-	private String plano_conta;
+	
+	@Column(name="tipo_plano_conta")
+	private TipoPlanoConta planoConta;
+	
 	@OneToOne
 	@JoinColumn(name="conta_destino", referencedColumnName="id")
 	private Conta numero_destino;
-	
 	
 	
 	public LocalDate getDate() {
@@ -52,12 +55,6 @@ public class Transacoes {
 	}
 	public void setValor(Double valor) {
 		this.valor = valor;
-	}
-	public String getPlano_conta() {
-		return plano_conta;
-	}
-	public void setPlano_conta(String plano_conta) {
-		this.plano_conta = plano_conta;
 	}
 	public Conta getNumero_destino() {
 		return numero_destino;
