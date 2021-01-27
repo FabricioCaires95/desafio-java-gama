@@ -1,1 +1,6 @@
-/target/
+/target
+desafio-java.iml
+.idea
+.settings
+.classpath
+.projetct
