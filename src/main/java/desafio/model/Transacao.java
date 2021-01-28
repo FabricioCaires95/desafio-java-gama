@@ -30,9 +30,12 @@ public class Transacao {
 	@Column(name= "valor_transacao", scale = 2)
 	private Double valor;
 	
+	@Column(name = "tipo_transacao")
+	private TipoTransacao tipoTrasacao;
+	
 	@Column(name="tipo_plano_conta")
 	private TipoPlanoConta tipoPlanoConta;
-	
+
 	@OneToOne
 	@JoinColumn(name="conta_destino", referencedColumnName="id")
 	private Conta numero_destino;
@@ -63,4 +66,16 @@ public class Transacao {
 		this.numero_destino = numero_destino;
 	}
 	
+	public TipoTransacao getTipoTrasacao() {
+		return tipoTrasacao;
+	}
+	public void setTipoTrasacao(TipoTransacao tipoTrasacao) {
+		this.tipoTrasacao = tipoTrasacao;
+	}
+	public TipoPlanoConta getTipoPlanoConta() {
+		return tipoPlanoConta;
+	}
+	public void setTipoPlanoConta(TipoPlanoConta tipoPlanoConta) {
+		this.tipoPlanoConta = tipoPlanoConta;
+	}
 }
