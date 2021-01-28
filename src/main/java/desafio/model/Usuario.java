@@ -29,6 +29,7 @@ public class Usuario {
 	@Column(length = 50)
 	private String nome;
 	
+	@Column(name="cpf", length=11)
 	private String cpf;
 	
 	@OneToMany (cascade = CascadeType.PERSIST, mappedBy = "proprietario")

@@ -9,7 +9,6 @@ public enum TipoTransacao {
 		this.tipoTransacao = tipoTransacao;
 	}
 	
-	
 	public String getTipoTransacao() {
 		return tipoTransacao;
 	}

@@ -31,7 +31,7 @@ public class Transacao {
 	private Double valor;
 	
 	@Column(name="tipo_plano_conta")
-	private TipoPlanoConta planoConta;
+	private TipoPlanoConta tipoPlanoConta;
 	
 	@OneToOne
 	@JoinColumn(name="conta_destino", referencedColumnName="id")

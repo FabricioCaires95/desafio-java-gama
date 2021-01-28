@@ -26,7 +26,7 @@ public class Conta {
 	private String tipo_conta;
 
 	@OneToOne
-	@JoinColumn(name = "cd_usuario",referencedColumnName = "id")
+	@JoinColumn(name = "cd_user_login", referencedColumnName = "user")
 	private Usuario proprietario;
 	
 	

@@ -9,4 +9,11 @@ public enum TipoConta {
 	TipoConta (String tipoConta){
 		this.tipoConta = tipoConta;
 	}
+	
+	public String getTipoConta() {
+		return tipoConta;
+	}
+	public void setTipoConta(String tipoConta) {
+		this.tipoConta = tipoConta;
+	}
 }

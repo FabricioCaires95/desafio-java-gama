@@ -15,5 +15,4 @@ public class Aplicacao {
 		u.addConta(new Conta("123",1000.08, "Conta Corrente"));
 		s.incluir(u);
 	}
-		
 }
