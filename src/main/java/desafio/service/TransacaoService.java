@@ -20,6 +20,7 @@ public class TransacaoService {
 				throw new IllegalStateException("numero de conta não encontrado" + transacao.getNumero());
 			}
 			trep.transferenciaDuasContas(transacao.getNumero().toString(), transacao.getNumero_destino().toString(), transacao.getValor());
+			trep.incluir(transacao);
 		} else {
 			//realizar outras transferencias
 			trep.incluir(transacao);

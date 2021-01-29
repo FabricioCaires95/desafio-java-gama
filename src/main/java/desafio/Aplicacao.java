@@ -46,9 +46,10 @@ public class Aplicacao {
 		Transacao t = new Transacao();
 		t.setDate(LocalDate.now());
 		t.setNumero("123");
-		t.setTipoPlanoConta("Mercado");
+		t.setTipoPlanoConta("Transferencia");
 		t.setTipoTrasacao(TipoTransacao.CR);
-		t.setValor(12.12);
+		t.setNumero_destino("123456");
+		t.setValor(500.50);
 		ts.transferencia(t);
 	}
 }

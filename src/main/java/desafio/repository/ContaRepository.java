@@ -14,9 +14,9 @@ public class ContaRepository extends RepositorioGenerico<Conta> {
 		return query.getResultList().size() != 0;
 	}
 	
-	public boolean realizarTransferencia(String numero_conta, double valor) {
+	public boolean realizarTransferencia(String numero_conta, Double valor) {
 		em.getTransaction().begin();
-		Query queryUpdate = em.createQuery("UPDATE Conta u SET u.saldo = u.saldo + :valor WHERE e.numero = :numero_conta");
+		Query queryUpdate = em.createQuery("UPDATE Conta u SET u.saldo = u.saldo + :valor WHERE u.numero = :numero_conta");
 		if (valor == 0) {
 			return true;
 		}
@@ -33,9 +33,8 @@ public class ContaRepository extends RepositorioGenerico<Conta> {
 		if (saldoAtual - valor < 0) {
 			return false;
 		}
-		c.setSaldo(saldoAtual + valor);
-		queryUpdate.setParameter("saldo", c.getSaldo());
-		queryUpdate.setParameter("numero_conta", c.getNumero());
+		queryUpdate.setParameter("valor", valor);
+		queryUpdate.setParameter("numero_conta", numero_conta);
 		int rowsUpdated = queryUpdate.executeUpdate();
 		em.getTransaction().commit();
 		

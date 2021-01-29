@@ -33,9 +33,10 @@ public class TransacaoRepository extends RepositorioGenerico<Transacao>{
 			contaUso = null;
             contaFinal = null;
 		}
-		crep.realizarTransferencia(contaUso.getNumero(), valor);
-		crep.realizarTransferencia(contaFinal.getNumero(), -valor);
-		contaUso.setSaldo(contaUso.getSaldo() + valor);
+		crep.realizarTransferencia(contaUso.getNumero(), valor*-1);
+		crep.realizarTransferencia(contaFinal.getNumero(), valor);
+		contaUso.setSaldo(contaUso.getSaldo() + valor*-1);
+		
 		return contaUso;
 	}
 	
