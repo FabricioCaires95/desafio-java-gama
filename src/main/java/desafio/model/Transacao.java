@@ -23,34 +23,38 @@ public class Transacao {
 	@Column(name = "data_transacao", nullable = false)
 	private LocalDate date;
 	
-	@OneToOne
-	@JoinColumn(name="conta_user", referencedColumnName = "id")
-	private Conta numero;
+	@Column(name = "numero_conta", nullable = false)
+	private String numero;
 	
 	@Column(name= "valor_transacao", scale = 2)
 	private Double valor;
 	
 	@Column(name = "tipo_transacao")
+	@Enumerated(EnumType.STRING)
 	private TipoTransacao tipoTrasacao;
 	
-	@Column(name="tipo_plano_conta")
-	private TipoPlanoConta tipoPlanoConta;
-
-	@OneToOne
-	@JoinColumn(name="conta_destino", referencedColumnName="id")
-	private Conta numero_destino;
+	@Column(name = "tipo_plano_conta")
+	private String tipoPlanoConta;
 	
+	@Column(name = "descricao", length = 50)
+	private String descricao;
 	
+	@Column(name = "numero_conta_destino")
+	private String numero_destino;
+	
+	public Integer getId() {
+		return id;
+	}
 	public LocalDate getDate() {
 		return date;
 	}
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public Conta getNumero() {
+	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(Conta numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	public Double getValor() {
@@ -59,10 +63,10 @@ public class Transacao {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
-	public Conta getNumero_destino() {
+	public String getNumero_destino() {
 		return numero_destino;
 	}
-	public void setNumero_destino(Conta numero_destino) {
+	public void setNumero_destino(String numero_destino) {
 		this.numero_destino = numero_destino;
 	}
 	
@@ -72,10 +76,10 @@ public class Transacao {
 	public void setTipoTrasacao(TipoTransacao tipoTrasacao) {
 		this.tipoTrasacao = tipoTrasacao;
 	}
-	public TipoPlanoConta getTipoPlanoConta() {
+	public String getTipoPlanoConta() {
 		return tipoPlanoConta;
 	}
-	public void setTipoPlanoConta(TipoPlanoConta tipoPlanoConta) {
+	public void setTipoPlanoConta(String tipoPlanoConta) {
 		this.tipoPlanoConta = tipoPlanoConta;
 	}
 }
